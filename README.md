@@ -74,7 +74,22 @@ Same for final user and developer:
   
 7. Power on the sensor, then the controller, and enjoy it :)
   
-8. **For developers:** if you want to check the code, or modify it, don't forget to import the **MIRF** and **SPI** libraries to your IDE (located in `/librairies-cpp/`).  
+8. **For developers:** if you want to check the code, or modify it, don't forget to import the **MIRF** and **SPI** libraries to your IDE (located in `/librairies-cpp/`).
+
+## Device compatibility
+
+**Works on:**
+* Arduino/Genuino Nano (original prototype)
+* Arduino/Genuino Uno (pin mapping need to be updated)
+* and other boards with Atmega328 built-in CPU but pin mapping need to be updated
+
+**Can also work on:**
+* Arduino Mega (CPU registers and pin mapping must be updated, see Intel documentation before configuring CPU registers from Atmega328 to Atmega2560)
+
+> ⚠️ **Important notes** ⚠️
+> * **Always flash Arduino CPUs without any component connected to the Arduino board for the first time to prevent short circuits!**
+> * To update pin mapping, replace #define values in source files.
+> * To update CPU registers and functions, you have to read documentation for both CPU (Atmega328 and yours) to see how to configure internal timers, PWM, ADC...
 
 ## Credits
 This work was done as part of a university project.
